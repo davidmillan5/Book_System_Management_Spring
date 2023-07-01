@@ -12,14 +12,18 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-@Document(collection="returned")
-public class Returned {
+@Document(collection="borrowed")
+public class Loaned {
 
     @Id
     private String id;
 
-    private int returned_units;
+    private int borrow_units;
 
-    private Date returned_date;
+    private Date borrow_date;
+
+    private Date borrow_due_date;
+
+
 
 }
