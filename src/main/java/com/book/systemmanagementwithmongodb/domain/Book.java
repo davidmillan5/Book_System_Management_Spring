@@ -40,7 +40,7 @@ public class Book {
 
     private int available_units;
 
-    private int borrow_units;
+    private int loaned_units;
 
 
     // Getters And Setters
@@ -126,12 +126,12 @@ public class Book {
         this.available_units = available_units;
     }
 
-    public int getBorrow_units() {
-        return borrow_units;
+    public int getLoaned_units() {
+        return loaned_units;
     }
 
-    public void setBorrow_units(int borrow_units) {
-        this.borrow_units = borrow_units;
+    public void setLoaned_units(int loaned_units) {
+        this.loaned_units = loaned_units;
     }
 
 
@@ -153,7 +153,7 @@ public class Book {
         this.category = category;
         this.total_units = total_units;
         this.available_units = available_units;
-        this.borrow_units = borrow_units;
+        this.loaned_units = borrow_units;
     }
 
     // Hashcode and equals
@@ -191,7 +191,7 @@ public class Book {
                 ", category='" + category + '\'' +
                 ", total_units=" + total_units +
                 ", available_units=" + available_units +
-                ", borrow_units=" + borrow_units +
+                ", borrow_units=" + loaned_units +
                 '}';
     }
 }

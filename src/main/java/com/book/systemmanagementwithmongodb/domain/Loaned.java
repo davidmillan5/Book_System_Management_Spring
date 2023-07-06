@@ -12,17 +12,17 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-@Document(collection="borrowed")
+@Document(collection="loaned")
 public class Loaned {
 
     @Id
     private String id;
 
-    private int borrow_units;
+    private int loaned_units;
 
-    private Date borrow_date;
+    private Date loaned_date;
 
-    private Date borrow_due_date;
+    private Date loaned_due_date;
 
 
 
