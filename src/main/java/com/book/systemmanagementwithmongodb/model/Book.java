@@ -1,4 +1,4 @@
-package com.book.systemmanagementwithmongodb.domain;
+package com.book.systemmanagementwithmongodb.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,11 +10,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.Objects;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-@Document(collection="books")
+@Document(collection="user")
 public class Book {
 
     @Id
@@ -41,10 +40,6 @@ public class Book {
     private int available_units;
 
     private int loaned_units;
-
-
-    // Getters And Setters
-
 
     public String getTitle() {
         return title;
@@ -134,15 +129,11 @@ public class Book {
         this.loaned_units = loaned_units;
     }
 
-
-    // Constructors
-
-
     public Book() {
     }
 
-
-    public Book(String title, String author, String edition, String isbn, String publisher, int pages, Date published, String category, int total_units, int available_units, int borrow_units) {
+    public Book(String id, String title, String author, String edition, String isbn, String publisher, int pages, Date published, String category, int total_units, int available_units, int loaned_units) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.edition = edition;
@@ -153,11 +144,22 @@ public class Book {
         this.category = category;
         this.total_units = total_units;
         this.available_units = available_units;
-        this.loaned_units = borrow_units;
+        this.loaned_units = loaned_units;
     }
 
-    // Hashcode and equals
-
+    public Book(String title, String author, String edition, String isbn, String publisher, int pages, Date published, String category, int total_units, int available_units, int loaned_units) {
+        this.title = title;
+        this.author = author;
+        this.edition = edition;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.pages = pages;
+        this.published = published;
+        this.category = category;
+        this.total_units = total_units;
+        this.available_units = available_units;
+        this.loaned_units = loaned_units;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -174,8 +176,6 @@ public class Book {
         return id != null ? id.hashCode() : 0;
     }
 
-    // toString
-
 
     @Override
     public String toString() {
@@ -191,7 +191,7 @@ public class Book {
                 ", category='" + category + '\'' +
                 ", total_units=" + total_units +
                 ", available_units=" + available_units +
-                ", borrow_units=" + loaned_units +
+                ", loaned_units=" + loaned_units +
                 '}';
     }
 }

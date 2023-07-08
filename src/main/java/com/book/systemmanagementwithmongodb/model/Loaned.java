@@ -1,4 +1,4 @@
-package com.book.systemmanagementwithmongodb.domain;
+package com.book.systemmanagementwithmongodb.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -12,14 +12,18 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-@Document(collection="returned")
-public class Returned {
+@Document(collection="loaned")
+public class Loaned {
 
     @Id
     private String id;
 
-    private int returned_units;
+    private int loaned_units;
 
-    private Date returned_date;
+    private Date loaned_date;
+
+    private Date loaned_due_date;
+
+
 
 }
