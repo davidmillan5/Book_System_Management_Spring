@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -20,9 +20,11 @@ public class Loaned {
 
     private int loaned_units;
 
-    private Date loaned_date;
+    private LocalDateTime loaned_date;
 
-    private Date loaned_due_date;
+    private LocalDateTime loaned_due_date;
+
+
 
 
 
