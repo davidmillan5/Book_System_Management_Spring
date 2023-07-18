@@ -17,15 +17,16 @@ public class Loaned {
 
     @Id
     private String id;
-
-    private int loaned_units;
-
-    private LocalDateTime loaned_date;
-
-    private LocalDateTime loaned_due_date;
-
+    private Integer loaned_units;
+    private LocalDateTime loaned_date = LocalDateTime.now();
+    private LocalDateTime loaned_due_date = LocalDateTime.now().plusDays(10);
+    private Book book;
+    private User user;
 
 
-
-
+    public Loaned(Integer loaned_units, Book book, User user) {
+        this.loaned_units = loaned_units;
+        this.book = book;
+        this.user = user;
+    }
 }
